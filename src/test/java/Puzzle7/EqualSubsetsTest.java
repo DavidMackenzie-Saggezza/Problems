@@ -52,18 +52,25 @@ class EqualSubsetsTest {
 
     @Test
     void MultipleSameElementAndSumReturnsTrue() {
-        // Takes 90 secs to run
-        int[] list = new int[13];
+        int[] list = new int[30];
         for(int i = 1; i < list.length; i++) {
             list[i] = 1;
         }
-        list[0] = 12;
+        list[0] = 29;
         assertTrue(equalSubsets(list));
     }
 
     @Test
     void exampleReturnsTrue() {
         int[] list = {15,5,20,10,35,15,10};
+        assertTrue(equalSubsets(list));
+    }
+
+    @Test
+    void bigArrayWorstCase() {
+        int[] list = new int[28];
+        Arrays.fill(list, 1);
+        list[0] = 27;
         assertTrue(equalSubsets(list));
     }
 }
