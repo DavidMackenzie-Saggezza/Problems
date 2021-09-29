@@ -26,7 +26,6 @@ class IntersectionTest {
 
         LinkedList ll1 = new LinkedList(node1);
         LinkedList ll2 = new LinkedList(node2);
-        System.out.println(node4 == node4);
         assertEquals(node4, getIntersection(ll1, ll2));
     }
 }

@@ -1,7 +1,8 @@
-import static Puzzle9.PerfectNumbers.perfectNumber;
+import static Puzzle7.EqualSubsets.equalSubsets;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(perfectNumber(20000));
+        int[] list = {1,1,1,1,1,1,1,1,1,1,1};
+        System.out.println(equalSubsets(list));
     }
 }

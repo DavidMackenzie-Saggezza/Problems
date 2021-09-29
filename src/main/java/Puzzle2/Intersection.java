@@ -14,6 +14,6 @@ public class Intersection {
             current1 = current1.getNext();
             current2 = ll2.getHead();
         }
-        return new Node(Integer.MIN_VALUE);
+        return null;
     }
 }
