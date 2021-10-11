@@ -13,8 +13,10 @@ class ReadTest {
         String returnString;
         try {
             assertEquals("Hello W", read.read(7));
-            assertEquals("orld", read.read(7));
-            assertEquals("", read.read(7));
+            assertEquals("orld\r\nM", read.read(7));
+            assertEquals("y name ", read.read(7));
+            assertEquals("is Davi", read.read(7));
+            assertEquals("d", read.read(7));
 
         }
         catch (Exception ex) {

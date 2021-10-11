@@ -26,6 +26,30 @@ public class EqualSubsets {
         return nums.contains(targetSum);
     }
 
+    public static Set<Integer> equalSubsetsReturnOneSubset(int[] list) {
+        int total = Arrays.stream(list).sum();
+        if (total % 2 == 1) {
+            return null;
+        }
+        int targetSum = total / 2;
+        HashMap<Integer, Set<Integer>> numsAndSubsets = new HashMap<>();
+        for (int i = list.length - 1; i >= 0; i--) {
+            HashMap<Integer, Set<Integer>> newNumsAndSubsets = new HashMap<>();
+            for (Integer num: numsAndSubsets.keySet()) {
+                Set<Integer> newSet = new HashSet<>();
+                newSet.addAll(numsAndSubsets.get(num));
+                newSet.add(list[i]);
+                newNumsAndSubsets.put(num + list[i], newSet);
+            }
+            numsAndSubsets.putAll(newNumsAndSubsets);
+            Set<Integer> newSet = new HashSet<>();
+            newSet.add(list[i]);
+            numsAndSubsets.put(list[i], newSet);
+        }
+
+        return numsAndSubsets.keySet().contains(targetSum) ? numsAndSubsets.get(targetSum) : null;
+    }
+
     public static boolean equalSubsetsOld(int[] list) {
         int total = Arrays.stream(list).sum();
         if (total % 2 == 1) {
