@@ -34,6 +34,4 @@ public class BinaryTree{
             return Math.min(minSumRecursive(node.getLeftChild(), count), minSumRecursive(node.getRightChild(), count));
         }
     }
-
-
 }

@@ -14,23 +14,24 @@ public class LinkedList {
 
     public void rotate(int k) {
         Node oldHead = getHead();
+
         Node current = getHead();
-        Node previous = null;
+        Node lastNode = null;
         while (current != null) {
-            previous = current;
+            lastNode = current;
             current = current.getNext();
         }
-        previous.setNext(oldHead);
-        current = getHead();
-        for (int i = 0; i < k; i++) {
-            current = current.getNext();
-        }
-        setHead(current);
-        current = oldHead;
+        lastNode.setNext(oldHead);
+
+        Node kthNode = oldHead;
+        Node nodeBeforekthNode = oldHead;
         for (int i = 0; i < k - 1; i++) {
-            current = current.getNext();
+            kthNode = kthNode.getNext();
+            nodeBeforekthNode = nodeBeforekthNode.getNext();
         }
-        current.setNext(null);
+        kthNode = kthNode.getNext();
+        setHead(kthNode);
+        nodeBeforekthNode.setNext(null);
     }
 
     public Node getHead() {

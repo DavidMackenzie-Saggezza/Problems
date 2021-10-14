@@ -25,9 +25,9 @@ class MarkovTest {
         int steps = 5000;
 
         HashMap<String, Integer> statesVisited = computeStatesVisited(probabilities, startingState, steps);
-        for (String state: statesVisited.keySet()) {
-            System.out.println(state + ": " + statesVisited.get(state));
-        }
+//        for (String state: statesVisited.keySet()) {
+//            System.out.println(state + ": " + statesVisited.get(state));
+//        }
 
     }
 }
