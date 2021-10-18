@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 
 public class Flatten {
     public static void flattenFile (String inputFilename, String outputFilename) throws IOException {
@@ -38,5 +39,9 @@ public class Flatten {
                 }
             }
         }
+
+        String string = "cat";
+        String string2 = "dog";
+        HashSet<String> set = new HashSet<>();
     }
 }
